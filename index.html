@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Saira" rel="stylesheet">
+    <title>Najeżdzanie na header, nav przypięty</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navHeight: 10vh;
+            --headerHeight: calc(100vh - var(--navHeight));
+        }
+
+        html {
+            text-align: center;
+            color: white;
+            font-size: 30px;
+            text-transform: uppercase;
+            font-family: 'Saira', sans-serif;
+            text-transform: uppercase;
+        }
+
+        nav {
+            position: fixed;
+            height: var(--navHeight);
+            background-color: black;
+            width: 100%;
+            line-height: var(--navHeight);
+            z-index: 5;
+        }
+
+        header {
+            height: var(--headerHeight);
+            background-color: red;
+            top: var(--navHeight);
+            line-height: var(--headerHeight);
+            position: fixed;
+            width: 100%;
+            background: linear-gradient(45deg, #22264b, #565857);
+            background-size: 10px 10px;
+
+        }
+
+        main {
+
+            height: calc(var(--headerHeight) + var(--navHeight));
+            background: linear-gradient(to bottom right, #e8edf3 0%, #e6cf8b 20%, #b56969 40%, #22264b 60%, #005C69 80%);
+            top: calc(var(--headerHeight));
+
+            position: absolute;
+            line-height: calc(var(--headerHeight) + var(--navHeight));
+
+            width: 100%;
+            text-shadow: 2px 2px black;
+            border-top: 1px solid #22264b;
+            margin-top: var(--navHeight);
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        Fixed nav
+    </nav>
+    <header>
+        Section overlapped with generated texture
+    </header>
+    <main>
+        Section overlapping with generated background
+    </main>
+</body>
+
+</html>
